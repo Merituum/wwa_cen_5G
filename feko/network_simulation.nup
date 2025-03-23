@@ -1,0 +1,259 @@
+*******************************************************************************
+***** Project-File for Urban-Prediction ***************************************
+*******************************************************************************
+
+*******************************************************************************
+***** Database ****************************************************************
+*******************************************************************************
+***** Vector Building Database (without extension) ****************************
+DATABASE_FILE "F:\wwa_5g\feko\planet_20.982,52.221_21.026,52.241"
+***** Mode of database (Standard = 6, IRT = 3, UDP = 7, COST = 4) *************
+DATABASE_MODE 3
+***** Different materials considered [y/n] ************************************
+MATERIAL_PROPERTIES y
+***** Different vegetation properties considered [y/n] ************************
+VEGETATION_PROPERTIES y
+
+***** Topography Pixel Database (without extension) ***************************
+TOPO_MODE 0
+***** Clutter Pixel Database (without extension) ******************************
+DATABASE_CLUTTER "Default"
+***** Clutter Table (without extension) ***************************************
+DATA_TABLE_CLUTTER "Default"
+***** Vegetation Database (Pixel Data) ****************************************
+VEGETATION_MODE 3
+VEGETATION_RESOLUTION 10.000
+*******************************************************************************
+***** Prediction model (1..6) *************************************************
+*******************************************************************************
+******** (IRT = 1, UDP = 5, KE = 7,  COST = 6, ITU-R P.1411 = 13) *************
+PREDICTION_MODEL_ID 1
+ABSOLUTE_HEIGHT n
+
+***** Parameters for frequency dependent losses *******************************
+FREQUENCY_DEPENDENT_LOSSES ENABLED n
+*******************************************************************************
+***** Parameter for the deterministic models **********************************
+*******************************************************************************
+***** Superposition of the contributions (PHASE or POWER) *******
+SUPERPOSITION POWER
+***** Computation of field strength: Empirical [e] or GTD/UTD [g] *************
+DIFFRACTION_MODEL e
+
+***** Rx Polarisation: 0=Omni or 1=V or 2=H ***********************************
+RX_POLARISATION 0
+
+***** Parameters for the determination of the rays with deterministic models **
+***** Considered propagation path classes *************************************
+MAX_REFLECTIONS 2
+MAX_DIFFRACTIONS 2
+MAX_SCATTERINGS 0
+MAX_REFLECTIONS_AND_DIFFRACTIONS 2
+MAX_REFLECTIONS_SAT 1
+MAX_DIFFRACTIONS_SAT 1
+MAX_SCATTERINGS_SAT 0
+MAX_REFLECTIONS_AND_DIFFRACTIONS_SAT 1
+IRT_GROUND_REFLECTION n
+IRT_GROUND_REFLECTION_ANGULAR_TOLERANCE 5.0
+*******************************************************************************
+***** Parameters of the Ground Material **************************************
+*******************************************************************************
+***** Dielectricity [As/Vm] ***************************************************
+GROUND_DIELECTRICITY 15.00000
+***** Permeability [Vs/Am] ****************************************************
+GROUND_PERMEABILITY 1.00000
+***** Conductivity [S] ********************************************************
+GROUND_CONDUCTIVITY 0.01000
+***** Diffraction loss incident part (min) [dB] *******************************
+GROUND_DIFFRACTION_LOSS_IN_MIN 8.00000
+***** Diffraction loss incident part (max) [dB] *******************************
+GROUND_DIFFRACTION_LOSS_IN_MAX 15.00000
+***** Diffraction loss diffracted part [dB] ***********************************
+GROUND_DIFFRACTION_LOSS_OUT 5.00000
+***** Reflection loss [dB] ****************************************************
+GROUND_REFLECTION_LOSS 9.00000
+***** Transmission loss Wall [dB] *********************************************
+GROUND_TRANSMISSION_LOSS 500.00000
+***** Surface roughness [cm] **************************************************
+GROUND_SURFACE_ROUGHNESS 0.00000
+IRT_POSTPROCESSING_WITH_SRT n
+MAX_DIFFRACTIONS_KE 100
+DIFFRACTION_LOSS_OFFSET_KE 6.000
+DIFFRACTION_LOSS_ANGLE_KE 30.000
+KE_IRT_INTERACTIONS n
+*******************************************************************************
+***** Logarithmic or linear consideration of rays *****************************
+*******************************************************************************
+** (Based on power = 0, based on field strength = 1) **************************
+RAYS_POWER_FIELD 0
+** (Logarithmic values = 0, Linear values = 1) ********************************
+RAYS_LOG_LIN 0
+RAYS_MAX_PATH_LOSS 200.000
+RAYS_MAX_DYNAMIC y 100.000
+RAYS_MAX_NUMBER y 20
+
+*******************************************************************************
+***** Parameters of the Empirical Diffraction Model ***************************
+*******************************************************************************
+***** (Default-values, if no material database is selected) *******************
+***** Dielectricity [As/Vm] ***************************************************
+DIELECTRICITY 4.00000
+***** Permeability [Vs/Am] ****************************************************
+PERMEABILITY 1.00000
+***** Conductivity [S] ********************************************************
+CONDUCTIVITY 0.01000
+***** Diffraction loss incident part (min) [dB] *******************************
+DIFFRACTION_LOSS_IN_MIN 8.00000
+***** Diffraction loss incident part (max) [dB] *******************************
+DIFFRACTION_LOSS_IN_MAX 15.00000
+***** Diffraction loss diffracted part [dB] ***********************************
+DIFFRACTION_LOSS_OUT 5.00000
+***** Additional Diffraction Loss [dB] if wedge is parallel to linear polariz.*
+ADD_DIFFRACTION_LOSS_PARALLEL_WEDGES 5.0000
+***** Reflection loss [dB] ****************************************************
+REFLECTION_LOSS 9.00000
+***** Transmission loss Wall [dB] *********************************************
+TRANSMISSION_LOSS 20.00000
+***** Surface roughness [cm] **************************************************
+SURFACE_ROUGHNESS 0.00000
+***** Vegetation Loss per Pixel [dB] ******************************************
+VEGETATION_LOSS_PIXEL 0.00000
+***** Vegetation Loss per Meter [dB/m] ****************************************
+VEGETATION_LOSS_METER 0.55000
+
+*******************************************************************************
+***** Settings of the Breakpoint **********************************************
+*******************************************************************************
+EXPONENT_BEFORE_BREAKPOINT 2.600
+EXPONENT_AFTER_BREAKPOINT 3.300
+EXPONENT_BEFORE_BREAKPOINT_LOS 2.600
+EXPONENT_AFTER_BREAKPOINT_LOS 3.300
+EXPONENT_SATELLITE 2.000
+OFFSET_BREAKPOINT 0.000
+FACTOR_BREAKPOINT 4.000
+MODE_BREAKPOINT 0
+DISTANCE_BREAKPOINT 500.000
+
+*******************************************************************************
+***** Settings of the Indoor-Models *******************************************
+*******************************************************************************
+***** Empirical Prediction of Indoor Coverage (y/n)  **************************
+INDOOR_PREDICTION n
+INDOOR_PREDICTION_ONLY n
+
+***** Parameters of the empirical indoor coverage *****************************
+INDOOR_MODEL 3
+INDOOR_MODEL_SPECIFIC_LOSS 0.600
+
+*******************************************************************************
+***** Settings of the Combined Network Planning Urban <=> Indoor **************
+*******************************************************************************
+***** Prediction with Combined Network Planning (CNP)  (y/n) ******************
+CNP_INDOOR_PREDICTION n
+KEYWORD_CNP_INDOOR_MATERIAL 1
+KEYWORD_CNP_INDOOR_SUBDIVISION y
+KEYWORD_CNP_INDOOR_MODEL 0
+KEYWORD_CNP_INDOOR_OUTPUT 0
+***** Prediction based on Fresnel coefficients (0) or empirical equations (1) *
+CNP_INDOOR_DIFF_MODEL 1
+***** Special parameters for Indoor IRT in CNP mode ***************************
+CNP_INDOOR_IRT_PENETRATION_TX_BUILDING n
+KEYWORD_CNP_INDOOR_IRT_INTERACTIONS_TOTAL 3
+KEYWORD_CNP_INDOOR_IRT_INTERACTIONS_REFLECTION 2
+KEYWORD_CNP_INDOOR_IRT_INTERACTIONS_DIFFRACTION 2
+KEYWORD_CNP_INDOOR_IRT_INTERACTIONS_TRANSMISSION 3
+***** Default material properties for indoor objects **************************
+CNP_INDOOR_MATERIAL_TRANS 10.000
+CNP_INDOOR_MATERIAL_REFL 9.000
+CNP_INDOOR_MATERIAL_DIFF_IN_MIN 8.000
+CNP_INDOOR_MATERIAL_DIFF_IN_MAX 15.000
+CNP_INDOOR_MATERIAL_DIFF_OUT 5.000
+CNP_INDOOR_MATERIAL_DIELECTRICITY 4.000
+CNP_INDOOR_MATERIAL_PERMEABILITY 1.000
+CNP_INDOOR_MATERIAL_CONDUCTIVITY 0.010
+***** Cancel determination of further rays after reaching free space loss *****
+FREE_SPACE_BREAK n
+
+*******************************************************************************
+***** Parameters of the Empirical Models **************************************
+*******************************************************************************
+DOMINANT_PATH_SUB_MODEL 0
+
+********************************************************
+* PARAMETERS OF DOMINANT PATH MODEL                    *
+* No sub model parameters written to file.             *
+********************************************************
+DOMINANT_PATH_MODEL EXPONENTS_OUTDOOR 2.300 2.500 3.300 3.600
+DOMINANT_PATH_MODEL WAVEGUIDING_FACTOR n 1.000 20.000 1.000 
+DOMINANT_PATH_MODEL DYNAMIC_RESOLUTION 0
+DOMINANT_PATH_MODEL HANGLECOMPUTATION_OFFSET 2.200
+DOMINANT_PATH_MODEL HANGLECOMPUTATION_BREAKPOINT 70.000
+DOMINANT_PATH_MODEL ADDITIONAL_HEIGHT 2.000
+DOMINANT_PATH_MODEL ADDITIONAL_HEIGHT_BUILDINGS 1.000
+DOMINANT_PATH_MODEL MAX_INTERACTIONS 0
+DOMINANT_PATH_MODEL MIN_FIELDSTRENGTH -10000.000
+DOMINANT_PATH_MODEL RESULT_OFFSET 0.000
+DOMINANT_PATH_MODEL DIFFRLOSS_AUTO y
+DOMINANT_PATH_MODEL URBAN_HORIZONTAL_DIFFRLOSS 11.000 11.000 11.000 11.000 11.000
+DOMINANT_PATH_MODEL BLPM 0.0500
+DOMINANT_PATH_MODEL BLPM_DISTANCE 10.0000
+DOMINANT_PATH_MODEL BLPM_FACTOR 0.0000
+DOMINANT_PATH_MODEL BLPM_MAX_FRESNEL 6.0000
+DOMINANT_PATH_MODEL DPM_SCENARIO 0
+DOMINANT_PATH_MODEL DPM_PATH_DEF_FREQUENCY n
+DOMINANT_PATH_MODEL DPM_PATH_SET_EXP_DIFFR n
+DOMINANT_PATH_MODEL DPM_PATH_FREQUENCY 3500.0
+DOMINANT_PATH_MODEL FLOOR_HANDLING_GENERAL 1
+DOMINANT_PATH_MODEL FLOOR_HANDLING_TRX 1
+DOMINANT_PATH_MODEL INTERACTION_LOSS_WEIGHT 0 1.00 10.00
+
+*******************************************************************************
+**************** PARAMETERS OF RECOMMENDATION ITU-R P.1411  *******************
+*******************************************************************************
+ITU_1411_ENVIRONMENT 1
+ITU_1411_LOS_CALCULATION_MODE 2
+ITU_1411_NLOS_SITUATION 3
+ITU_1411_PROPAGATION_MODELS 0
+ITU_1411_TRAFFIC_MODE 1
+ITU_1411_IGNORE_BP_DISTANCE n
+ITU_1411_ADDITIONAL_LOSS 20.00
+ITU_1411_USE_SITE_GENERAL n
+ITU_1411_ADD_GAUSSIAN_DIST n
+ITU_1411_USE_STATISTICAL_MODEL n
+ITU_1411_LOCATION_PERCENTAGE 50.00
+
+*******************************************************************************
+***** Post Processing *********************************************************
+*******************************************************************************
+POST_PROCESSING y
+
+***** Transition between deterministic and empirical prediction results ******
+POST_TRANSITION n
+TRANSITION_MIN_DIFF 0.000
+TRANSITION_MAX_DIFF 45.000
+TRANSITION_ADD_CTRL 1
+TRANSITION_ADD_MIN_BUILD 1
+TRANSITION_ADD_MAX_BUILD 2
+TRANSITION_ADD_MIN_DIST 20.000
+TRANSITION_ADD_MAX_DIST 100.000
+
+***** Computation of not predicted pixels with Vertical Plane Model ***********
+KE_POST_OMLY_AREA_IRT y
+*******************************************************************************
+***** Clutter - Morpho ********************************************************
+*******************************************************************************
+***** Consider morpho and clutter properties [y/n] ****************************
+MORPHO_PROPERTIES n
+***** Consider frequency depending attenuations defined for morpho classes [y/n]
+MORPHO_ATTENUATIONS y
+***** Consider heights of clutter classes [y/n] ********************************
+MORPHO_HEIGHT_CONSIDER 0
+***** Consideration of morpho classes (only receiver (0) or along ray (1)) ****
+MORPHO_MODE 0
+***** If moprho class along the ray: Constant weight (0) or Decreasing (1) ****
+MORPHO_RAY_MODE 1
+***** If morpho class along the ray: Number of intervals **********************
+MORPHO_INTERVAL_NUMBER 3
+***** If morpho class along the ray: Min. length of interval [m] **************
+MORPHO_INTERVAL_LENGTH 200.000
+
